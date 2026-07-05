@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text-to-SQL Database Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="sparkle">✨</span>
+                <h1>SQL.AI</h1>
+            </div>
+            <p class="subtitle">Talk to your database using natural language</p>
+        </header>
+
+        <main>
+            <div class="card schema-card">
+                <h2>Database Schema: <code>orders</code></h2>
+                <div class="schema-table">
+                    <div class="schema-row">
+                        <span class="col-name">id</span>
+                        <span class="col-type">INTEGER PRIMARY KEY</span>
+                    </div>
+                    <div class="schema-row">
+                        <span class="col-name">product_name</span>
+                        <span class="col-type">TEXT</span>
+                    </div>
+                    <div class="schema-row">
+                        <span class="col-name">quantity</span>
+                        <span class="col-type">INTEGER</span>
+                    </div>
+                    <div class="schema-row">
+                        <span class="col-name">price</span>
+                        <span class="col-type">REAL</span>
+                    </div>
+                    <div class="schema-row">
+                        <span class="col-name">order_date</span>
+                        <span class="col-type">TEXT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card query-card">
+                <h2>Ask a Question</h2>
+                <div class="preset-questions">
+                    <button class="preset-btn" onclick="selectQuestion('What is the total revenue from Laptops?')">Total revenue from Laptops?</button>
+                    <button class="preset-btn" onclick="selectQuestion('List all orders where price is greater than 100 dollars')">Orders > $100?</button>
+                    <button class="preset-btn" onclick="selectQuestion('How many items of Keyboard were sold in total?')">Total Keyboards sold?</button>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="nl-input" placeholder="Type your question here (e.g., Show me all orders)..." autocomplete="off">
+                    <button id="generate-btn" onclick="processQuery()">Generate & Run</button>
+                </div>
+            </div>
+
+            <div class="card result-card hidden" id="result-section">
+                <div class="result-header">
+                    <h2>AI Translation Result</h2>
+                    <span class="badge">Success</span>
+                </div>
+                
+                <div class="sql-box">
+                    <h3>Generated SQL Query</h3>
+                    <pre><code id="sql-output" class="language-sql">SELECT ...</code></pre>
+                </div>
+
+                <div class="data-box">
+                    <h3>Query Output</h3>
+                    <div class="table-wrapper">
+                        <table id="data-table">
+                            <thead>
+                                <tr id="table-headers"></tr>
+                            </thead>
+                            <tbody id="table-rows"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Research Team Work N° 01 • <a href="https://github.com/Cristhian465/Research-Team-Work-N-01-SQL-AI-Database-Solutions" target="_blank" id="github-link">GitHub Repository</a></p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

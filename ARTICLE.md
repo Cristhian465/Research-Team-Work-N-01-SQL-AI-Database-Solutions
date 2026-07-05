@@ -96,13 +96,17 @@ Results:
 (6000.0,)
 ```
 
-## Exploring the Full Repository
+## Exploring the Full Repository & Live Demo
 
-You can find the complete code, including automation via GitHub Actions to ensure our scripts run flawlessly, in our public repository. 
+We have built an interactive web interface where you can experiment with this tool live!
+
+🌐 **[Live Demo: SQL.AI Database Explorer](https://cristhian465.github.io/Research-Team-Work-N-01-SQL-AI-Database-Solutions/)**
+
+You can also inspect the code repository, which includes automation via GitHub Actions to ensure our scripts run flawlessly.
 
 🔗 **[GitHub Repository: Research-Team-Work-N-01-SQL-AI-Database-Solutions](https://github.com/Cristhian465/Research-Team-Work-N-01-SQL-AI-Database-Solutions)**
 
-In the repository, we've implemented CI/CD pipelines (Automation) that automatically test the code execution upon every commit, ensuring that our AI database interactions remain stable.
+In the repository, we've implemented CI/CD pipelines (Automation) that automatically test the backend code execution and deploy the updated static frontend to GitHub Pages upon every commit, ensuring that our AI database interactions remain stable.
 
 ## Demonstration Video
 
